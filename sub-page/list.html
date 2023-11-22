@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="../stylesheet/list.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Saira+Extra+Condensed:wght@700&display=swap" rel="stylesheet">
+
+    <title>Color Home.</title>
+  </head>
+  <body>
+    <div id="list-header">
+      <h1>Color Home.</h1>
+    </div>
+
+    <div id="list-slider">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div>
+          <img src="../img/slider/01.jpg" style="width: 100%;" />
+          <div class="text">Hiện đại</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="../img/slider/02.jpg" style="width: 100%;" />
+          <div class="text">Cổ Điển</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <img src="../img/slider/03.jpg" style="width: 100%;" />
+          <div class="text">Tinh tế</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 5</div>
+          <img src="../img/slider/04.jpg" style="width: 100%;" />
+          <div class="text">Trừu tượng</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 5</div>
+          <img src="../img/slider/05.jpg" style="width: 100%;" />
+          <div class="text">Sang trọng</div>
+        </div>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div id="list-content">
+      <ul class="list-section"></ul>
+    </div>
+
+    <!-- <div class="back">
+      <a
+        href="../index.html"
+        style="color: black; text-decoration: unset"
+        id="home-button"
+        >back
+      </a> -->
+    </div>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2750); // Change image every 2 seconds
+      }
+    </script>
+  </body>
+</html>
